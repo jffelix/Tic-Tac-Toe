@@ -1,5 +1,8 @@
 import { set } from "lodash";
 import React, { useEffect, useState } from "react";
+import FirstRow from "./rows/FirstRow.jsx";
+import SecondRow from "./rows/SecondRow.jsx";
+import ThirdRow from "./rows/ThirdRow.jsx";
 
 const Board = (props) => {
 
@@ -15,8 +18,6 @@ const Board = (props) => {
     const [ c2, setC2 ] = useState(null);
     const [ c3, setC3 ] = useState(null);
 
-    // need to identify which button is being clicked
-
     const markBox = () => {
         if (props.currentTurn === "X") {
             props.changeTurn();
@@ -24,36 +25,46 @@ const Board = (props) => {
             props.changeTurn();
         }
     }
-
-    const markA1 = () => {
-        if (a1 !== null) {
-            return;
-        }
-        setA1(props.currentTurn);
-        markBox();
-    }
-
-    const markA2 = () => {
-        if (a2 !== null) {
-            return;
-        }
-        setA2(props.currentTurn);
-        markBox();
-    }
-
-    const markA3 = () => {
-        if (a3 !== null) {
-            return;
-        }
-        setA3(props.currentTurn);
-        markBox();
-    }
     
     return (
         <div>
-            <button id="A1" onClick={markA1}>{a1}</button>
-            <button id="A2" onClick={markA2}>{a2}</button>
-            <button id="A3" onClick={markA3}>{a3}</button>
+            <div>
+                <FirstRow 
+                    a1={a1} 
+                    setA1={setA1}
+                    a2={a2}
+                    setA2={setA2}
+                    a3={a3}
+                    setA3={setA3}
+                    markBox={markBox} 
+                    currentTurn={props.currentTurn}
+                />
+            </div>
+            <div>
+                <SecondRow 
+                    b1={b1} 
+                    setB1={setB1}
+                    b2={b2}
+                    setB2={setB2}
+                    b3={b3}
+                    setB3={setB3}
+                    markBox={markBox} 
+                    currentTurn={props.currentTurn}
+                />
+            </div>
+            <div>
+                <ThirdRow 
+                  c1={c1} 
+                  setC1={setC1}
+                  c2={c2}
+                  setC2={setC2}
+                  c3={c3}
+                  setC3={setC3}
+                  markBox={markBox} 
+                  currentTurn={props.currentTurn}
+                  />
+            </div>
+
         </div>
     )
 }
