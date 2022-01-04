@@ -34,7 +34,10 @@ const App = () => {
         <div>
             <h1 className="title">{appTitle}</h1>
             <h2>Current Turn: {currentTurn}</h2>
-            <Board changeTurn={changeTurn}/>
+            <Board
+              currentTurn={currentTurn}
+              changeTurn={changeTurn}
+              />
         </div>
     )
 
