@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import Board from "./Board.jsx";
 
 const App = () => {
 
     useEffect(() => {
         getTitle();
+        changeTurn();
     }, []);
 
     let [ appTitle, setAppTitle ] = useState("");
+    let [ currentTurn, setCurrentTurn ] = useState(null);
 
     const getTitle = () => {
         Axios.get("/title")
@@ -19,9 +22,19 @@ const App = () => {
         })
     }
 
+    const changeTurn = () => {
+        if (currentTurn === "X") {
+            setCurrentTurn("O");
+        } else {
+            setCurrentTurn("X");
+        }
+    }
+
     return (
         <div>
             <h1 className="title">{appTitle}</h1>
+            <h2>Current Turn: {currentTurn}</h2>
+            <Board changeTurn={changeTurn}/>
         </div>
     )
 
