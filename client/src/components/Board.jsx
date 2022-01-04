@@ -6,6 +6,9 @@ import ThirdRow from "./rows/ThirdRow.jsx";
 
 const Board = (props) => {
 
+    const [ wasWinnerDeclared, setWasWinnerDeclared] = useState(false);
+    const [ winner, setWinner ] = useState(null);
+
     const [ a1, setA1 ] = useState(null);
     const [ a2, setA2 ] = useState(null);
     const [ a3, setA3 ] = useState(null);
@@ -27,6 +30,8 @@ const Board = (props) => {
     }
 
     // use ternary operators in conditional rendering
+      // only render if wasWinnerDeclared is true
+      // "{winner} Won!"
     
     return (
         <div>
