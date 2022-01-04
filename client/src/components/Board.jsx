@@ -30,7 +30,7 @@ const Board = (props) => {
     
     return (
         <div>
-            <div>
+            <div className="firstRow">
                 <FirstRow 
                     a1={a1} 
                     setA1={setA1}
@@ -42,7 +42,7 @@ const Board = (props) => {
                     currentTurn={props.currentTurn}
                 />
             </div>
-            <div>
+            <div className="secondRow">
                 <SecondRow 
                     b1={b1} 
                     setB1={setB1}
@@ -54,7 +54,7 @@ const Board = (props) => {
                     currentTurn={props.currentTurn}
                 />
             </div>
-            <div>
+            <div className="thirdRow">
                 <ThirdRow 
                     c1={c1} 
                     setC1={setC1}
