@@ -1,7 +1,5 @@
+import { set } from "lodash";
 import React, { useEffect, useState } from "react";
-import FirstRow from "./rows/FirstRow.jsx";
-import SecondRow from "./rows/SecondRow.jsx";
-import ThirdRow from "./rows/ThirdRow.jsx";
 
 const Board = (props) => {
 
@@ -17,21 +15,45 @@ const Board = (props) => {
     const [ c2, setC2 ] = useState(null);
     const [ c3, setC3 ] = useState(null);
 
+    // need to identify which button is being clicked
+
     const markBox = () => {
         if (props.currentTurn === "X") {
-            return "X";
+            props.changeTurn();
         } else {
-            return "Y";
+            props.changeTurn();
         }
+    }
+
+    const markA1 = () => {
+        if (a1 !== null) {
+            return;
+        }
+        setA1(props.currentTurn);
+        markBox();
+    }
+
+    const markA2 = () => {
+        if (a2 !== null) {
+            return;
+        }
+        setA2(props.currentTurn);
+        markBox();
+    }
+
+    const markA3 = () => {
+        if (a3 !== null) {
+            return;
+        }
+        setA3(props.currentTurn);
+        markBox();
     }
     
     return (
         <div>
-            <FirstRow 
-              currentTurn={props.currentTurn}
-              changeTurn={props.changeTurn} />
-            <SecondRow />
-            <ThirdRow />
+            <button id="A1" onClick={markA1}>{a1}</button>
+            <button id="A2" onClick={markA2}>{a2}</button>
+            <button id="A3" onClick={markA3}>{a3}</button>
         </div>
     )
 }
