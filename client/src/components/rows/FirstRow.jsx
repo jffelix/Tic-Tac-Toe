@@ -31,9 +31,9 @@ const ThirdRow = (props) => {
 
     return (
         <div>
-            <button onClick={markA1}>{props.a1}</button>
-            <button onClick={markA2}>{props.a2}</button>
-            <button onClick={markA3}>{props.a3}</button>
+            <button className="a1" onClick={markA1}>{props.a1}</button>
+            <button className="a2" onClick={markA2}>{props.a2}</button>
+            <button className="a3" onClick={markA3}>{props.a3}</button>
         </div>
     )
 }

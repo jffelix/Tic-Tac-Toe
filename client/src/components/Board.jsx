@@ -25,6 +25,8 @@ const Board = (props) => {
             props.changeTurn();
         }
     }
+
+    // use ternary operators in conditional rendering
     
     return (
         <div>
@@ -54,17 +56,16 @@ const Board = (props) => {
             </div>
             <div>
                 <ThirdRow 
-                  c1={c1} 
-                  setC1={setC1}
-                  c2={c2}
-                  setC2={setC2}
-                  c3={c3}
-                  setC3={setC3}
-                  markBox={markBox} 
-                  currentTurn={props.currentTurn}
-                  />
+                    c1={c1} 
+                    setC1={setC1}
+                    c2={c2}
+                    setC2={setC2}
+                    c3={c3}
+                    setC3={setC3}
+                    markBox={markBox} 
+                    currentTurn={props.currentTurn}
+                />
             </div>
-
         </div>
     )
 }
