@@ -1,9 +1,18 @@
 .app {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 .title {
     font-size: 40px;
+    /* padding: 10px; */
+}
+
+.fullBoard {
     padding: 10px;
+}
+
+.currentTurn {
+    padding-bottom: 40px;
+    font-size: 18px;
 }

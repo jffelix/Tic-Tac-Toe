@@ -4,6 +4,8 @@ import FirstRow from "./rows/FirstRow.jsx";
 import SecondRow from "./rows/SecondRow.jsx";
 import ThirdRow from "./rows/ThirdRow.jsx";
 
+import "../../dist/App.css";
+
 const Board = (props) => {
 
     useEffect(() => {
@@ -57,7 +59,7 @@ const Board = (props) => {
 
     return (
         <div className="fullBoard">
-            <div>
+            <div className="currentTurn">
                 <h2>Current Turn: {currentTurn}</h2>
             </div>
             <div>
