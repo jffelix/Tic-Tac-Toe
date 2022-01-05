@@ -7,8 +7,10 @@ import ThirdRow from "./rows/ThirdRow.jsx";
 const Board = (props) => {
 
     useEffect(() => {
-        console.log('Welcome to Tic-Tac-Toe!')
+        changeTurn();
     }, []);
+
+    const [ currentTurn, setCurrentTurn ] = useState(null);
 
     const [ wasWinnerDeclared, setWasWinnerDeclared] = useState(false);
     const [ wasTieGame, setWasTieGame ] = useState(false);
@@ -26,51 +28,60 @@ const Board = (props) => {
     const [ c2, setC2 ] = useState(null);
     const [ c3, setC3 ] = useState(null);
 
-    const markBox = () => {
-        if (props.currentTurn === "X") {
-            props.changeTurn();
-            checkForWinner();
+    const changeTurn = () => {
+        if (currentTurn === "X") {
+            setCurrentTurn("O");
         } else {
-            props.changeTurn();
-            checkForWinner();
+            setCurrentTurn("X");
+        }
+    }
+
+    const markBox = () => {
+        if (currentTurn === "X") {
+            changeTurn();
+        } else {
+            changeTurn();
         }
     }
    
-    const checkForWinner = () => {
+    // const checkForWinner = () => {
 
-        // for horizontal wins
-        if (a1 && a1 === a2 && a1 === a3) {
-            setWasWinnerDeclared(true);
-        }
-        if (b1 && b1 === b2 && b1 === b3) {
-            setWasWinnerDeclared(true);
-        }
-        if (c1 && c1 === c2 && c1 === c3) {
-            setWasWinnerDeclared(true);
-        }
+    //     // for horizontal wins
+    //     if (a1 && a1 === a2 && a1 === a3) {
+    //         setWasWinnerDeclared(true);
+    //     }
+    //     if (b1 && b1 === b2 && b1 === b3) {
+    //         setWasWinnerDeclared(true);
+    //     }
+    //     if (c1 && c1 === c2 && c1 === c3) {
+    //         setWasWinnerDeclared(true);
+    //     }
 
-        // for vertical wins
-        if (a1 && a1 === b1 && a1 === c1) {
-            setWasWinnerDeclared(true);
-        }
-        if (a2 && a2 === b2 && a2 === c2) {
-            setWasWinnerDeclared(true);
-        }
-        if (a3 && a3 === b3 && a3 === c3) {
-            setWasWinnerDeclared(true);
-        }
+    //     // for vertical wins
+    //     if (a1 && a1 === b1 && a1 === c1) {
+    //         setWasWinnerDeclared(true);
+    //     }
+    //     if (a2 && a2 === b2 && a2 === c2) {
+    //         setWasWinnerDeclared(true);
+    //     }
+    //     if (a3 && a3 === b3 && a3 === c3) {
+    //         setWasWinnerDeclared(true);
+    //     }
 
-        // for diagonal wins
-        if (a1 && a1 === b2 && a1 === c3) {
-            setWasWinnerDeclared(true); 
-        }
-        if (a3 && a3 === b2 && a3 === c1) {
-            setWasWinnerDeclared(true);  
-        }
-    }
-    
+    //     // for diagonal wins
+    //     if (a1 && a1 === b2 && a1 === c3) {
+    //         setWasWinnerDeclared(true); 
+    //     }
+    //     if (a3 && a3 === b2 && a3 === c1) {
+    //         setWasWinnerDeclared(true);  
+    //     }
+    // }
+
     return (
         <div>
+            <div>
+                <h2>Current Turn: {currentTurn}</h2>
+            </div>
             <div className="firstRow">
                 <FirstRow 
                     a1={a1} 
@@ -80,8 +91,7 @@ const Board = (props) => {
                     a3={a3}
                     setA3={setA3}
                     markBox={markBox} 
-                    currentTurn={props.currentTurn}
-                    checkForWinner={checkForWinner}
+                    currentTurn={currentTurn}
                 />
             </div>
             <div className="secondRow">
@@ -93,8 +103,7 @@ const Board = (props) => {
                     b3={b3}
                     setB3={setB3}
                     markBox={markBox} 
-                    currentTurn={props.currentTurn}
-                    checkForWinner={checkForWinner}
+                    currentTurn={currentTurn}
                 />
             </div>
             <div className="thirdRow">
@@ -106,14 +115,22 @@ const Board = (props) => {
                     c3={c3}
                     setC3={setC3}
                     markBox={markBox} 
-                    currentTurn={props.currentTurn}
-                    checkForWinner={checkForWinner}
+                    currentTurn={currentTurn}
                 />
             </div>
-            {!wasWinnerDeclared ? null: 
+            {
+                a1 && a1 === a2 && a1 === a3 ||
+                b1 && b1 === b2 && b1 === b3 ||
+                c1 && c1 === c2 && c1 === c3 ||
+                a1 && a1 === b1 && a1 === c1 ||
+                a2 && a2 === b2 && a2 === c2 ||
+                a3 && a3 === b3 && a3 === c3 ||
+                a1 && a1 === b2 && a1 === c3 ||
+                a3 && a3 === b2 && a3 === c1
+                ?
                 <div>
-                    <h3>Winner!</h3>    
-                </div>
+                    <h3>Player Wins!</h3>
+                </div> : null
             }
         </div>
     )
