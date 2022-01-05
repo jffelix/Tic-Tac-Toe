@@ -8,7 +8,7 @@ Welcome to Tic-Tac-Toe! This is an application created with the purpose of furth
 - Determines when the game is a tie
 - Offers reset board option when game is complete
 
-## How to run application
+## How to run the application
 
 - Fork over this repository to your GitHub account.
 - Run "git clone" command in Terminal to copy the repository to your personal computer.
