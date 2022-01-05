@@ -1,4 +1,5 @@
 import React from "react";
+import "../../../dist/ThirdRow.css";
 
 const ThirdRow = (props) => {
 

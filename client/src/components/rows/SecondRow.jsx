@@ -1,4 +1,5 @@
 import React from "react";
+import "../../../dist/SecondRow.css";
 
 const SecondRow = (props) => {
 
