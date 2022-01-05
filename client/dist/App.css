@@ -16,9 +16,18 @@ body {
     font-size: 60px;
 }
 
-/* .fullBoard {
+.gameComplete {
     padding: 10px;
-} */
+    font-size: 24px;
+}
+
+.gameComplete button {
+    border-style: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Handlee', cursive;
+    font-size: 16px;
+}
 
 .currentTurn {
     padding-bottom: 40px;

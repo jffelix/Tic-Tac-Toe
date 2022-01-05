@@ -108,7 +108,7 @@ const Board = (props) => {
                 a1 && a1 === b2 && a1 === c3 ||
                 a3 && a3 === b2 && a3 === c1
                 ?
-                <div>
+                <div className="gameComplete">
                     <h3>Player {previousTurn} Wins!</h3>
                     <h4>Try Again?</h4>
                     <button onClick={resetGame}>Reset</button>
@@ -130,7 +130,7 @@ const Board = (props) => {
 
                 )
                 ?
-                <div>
+                <div className="gameComplete">
                     <h3>Tie!</h3>
                     <h4>Try Again?</h4>
                     <button onClick={resetGame}>Reset</button>
