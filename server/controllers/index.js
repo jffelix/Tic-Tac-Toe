@@ -1,6 +1,6 @@
 const controllers = {
     getData: function(req, res) {
-        res.status(200).send("Tic-Tac-Toe (Redux)");
+        res.status(200).send("Tic-Tac-Toe");
     }
 }
 
