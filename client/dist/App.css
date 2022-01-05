@@ -18,6 +18,13 @@ body {
 
 .gameComplete {
     padding: 10px;
+}
+
+.gameComplete h3 {
+    font-size: 28px;
+}
+
+.gameComplete h4 {
     font-size: 24px;
 }
 
