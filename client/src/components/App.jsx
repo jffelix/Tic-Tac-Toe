@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import Board from "./Board.jsx";
+import "../../dist/App.css";
 
 const App = () => {
 
@@ -21,7 +22,7 @@ const App = () => {
     }
 
     return (
-        <div>
+        <div className="app">
             <h1 className="title">{appTitle}</h1>
             <Board />
         </div>

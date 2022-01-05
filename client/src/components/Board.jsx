@@ -56,7 +56,7 @@ const Board = (props) => {
     }
 
     return (
-        <div>
+        <div className="fullBoard">
             <div>
                 <h2>Current Turn: {currentTurn}</h2>
             </div>

@@ -1,6 +1,13 @@
+.firstRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .a1, .a2, .a3 {
     font-size: 30px;
     height: 100;
     width: 100;
     position: relative;
+    overflow-y: scroll;
 }
