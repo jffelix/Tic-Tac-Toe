@@ -132,6 +132,15 @@ const Board = (props) => {
                     <h3>Player Wins!</h3>
                 </div> : null
             }
+            {
+                a1 && a2 && a3 &&
+                b1 && b2 && b3 &&
+                c1 && c2 && c3
+                ?
+                <div>
+                    <h3>Tie!</h3>
+                </div> : null
+            }
         </div>
     )
 }
