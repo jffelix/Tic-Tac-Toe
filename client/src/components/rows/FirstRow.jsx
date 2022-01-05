@@ -9,6 +9,7 @@ const ThirdRow = (props) => {
 
         props.setA1(props.currentTurn);
         props.markBox();
+        props.checkForWinner();
     }
 
     const markA2 = () => {
@@ -18,6 +19,7 @@ const ThirdRow = (props) => {
 
         props.setA2(props.currentTurn);
         props.markBox();
+        props.checkForWinner();
     }
 
     const markA3 = () => {
@@ -27,6 +29,7 @@ const ThirdRow = (props) => {
 
         props.setA3(props.currentTurn);
         props.markBox();
+        props.checkForWinner();
     }
 
     return (

@@ -9,6 +9,7 @@ const SecondRow = (props) => {
 
         props.setB1(props.currentTurn);
         props.markBox();
+        props.checkForWinner();
     }
 
     const markB2 = () => {
@@ -18,6 +19,7 @@ const SecondRow = (props) => {
 
         props.setB2(props.currentTurn);
         props.markBox();
+        props.checkForWinner();
     }
 
     const markB3 = () => {
@@ -27,6 +29,7 @@ const SecondRow = (props) => {
 
         props.setB3(props.currentTurn);
         props.markBox();
+        props.checkForWinner();
     }
 
     return (

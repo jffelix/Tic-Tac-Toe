@@ -6,6 +6,10 @@ import ThirdRow from "./rows/ThirdRow.jsx";
 
 const Board = (props) => {
 
+    useEffect(() => {
+        console.log('Welcome to Tic-Tac-Toe!')
+    }, []);
+
     const [ wasWinnerDeclared, setWasWinnerDeclared] = useState(false);
     const [ winner, setWinner ] = useState(null);
 
@@ -32,6 +36,20 @@ const Board = (props) => {
     // use ternary operators in conditional rendering
       // only render if wasWinnerDeclared is true
       // "{winner} Won!"
+    // every time you click a box
+      // invoke checkForWinner
+    
+    const checkForWinner = () => {
+
+        if (a1 && a1 === a2 && a1 === a3) {
+            setWasWinnerDeclared(true);
+        }
+
+        console.log('wasWinnerDeclared: ', wasWinnerDeclared);
+        console.log('a1: ', a1);
+        console.log('a2: ', a2);
+        console.log('a3: ', a3);
+    }
     
     return (
         <div>
@@ -45,6 +63,7 @@ const Board = (props) => {
                     setA3={setA3}
                     markBox={markBox} 
                     currentTurn={props.currentTurn}
+                    checkForWinner={checkForWinner}
                 />
             </div>
             <div className="secondRow">
@@ -57,6 +76,7 @@ const Board = (props) => {
                     setB3={setB3}
                     markBox={markBox} 
                     currentTurn={props.currentTurn}
+                    checkForWinner={checkForWinner}
                 />
             </div>
             <div className="thirdRow">
@@ -71,6 +91,11 @@ const Board = (props) => {
                     currentTurn={props.currentTurn}
                 />
             </div>
+            {!wasWinnerDeclared ? null: 
+                <div>
+                    <h3>Winner!</h3>    
+                </div>
+            }
         </div>
     )
 }
