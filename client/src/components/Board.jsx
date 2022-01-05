@@ -13,8 +13,6 @@ const Board = (props) => {
     const [ currentTurn, setCurrentTurn ] = useState(null);
     const [ previousTurn, setPreviousTurn ] = useState(null);
 
-    const [ winner, setWinner ] = useState(null);
-
     const [ a1, setA1 ] = useState(null);
     const [ a2, setA2 ] = useState(null);
     const [ a3, setA3 ] = useState(null);
@@ -142,59 +140,3 @@ const Board = (props) => {
 
 export default Board;
 
-
-
-// BACKUP CODE FOR SETSTATE
-
-    // const checkForWinner = () => {
-
-    //     // for horizontal wins
-    //     if (a1 && a1 === a2 && a1 === a3) {
-    //         setWasWinnerDeclared(true);
-    //     }
-    //     if (b1 && b1 === b2 && b1 === b3) {
-    //         setWasWinnerDeclared(true);
-    //     }
-    //     if (c1 && c1 === c2 && c1 === c3) {
-    //         setWasWinnerDeclared(true);
-    //     }
-
-    //     // for vertical wins
-    //     if (a1 && a1 === b1 && a1 === c1) {
-    //         setWasWinnerDeclared(true);
-    //     }
-    //     if (a2 && a2 === b2 && a2 === c2) {
-    //         setWasWinnerDeclared(true);
-    //     }
-    //     if (a3 && a3 === b3 && a3 === c3) {
-    //         setWasWinnerDeclared(true);
-    //     }
-
-    //     // for diagonal wins
-    //     if (a1 && a1 === b2 && a1 === c3) {
-    //         setWasWinnerDeclared(true); 
-    //     }
-    //     if (a3 && a3 === b2 && a3 === c1) {
-    //         setWasWinnerDeclared(true);  
-    //     }
-    // }
-
-
-// NO MATCH CONDITIONAL
-
-    // (
-    //     (a1 !== a2 || a1 !== a3) ||
-    //     (b1 !== b2 || b1 !== b3) ||
-    //     (c1 !== c2 || c1 !== c3) ||
-    //     (a1 !== b1 || a1 !== c1) ||
-    //     (a2 !== b2 || a2 !== c2) ||
-    //     (a3 !== b3 || a3 !== c3) ||
-    //     (a1 !== b2 || a1 !== c3) ||
-    //     (a3 !== b2 || a3 !== c1)
-    // )
-
-
-// BACKUP VARIABLES
-
-    // const [ wasWinnerDeclared, setWasWinnerDeclared] = useState(false);
-    // const [ wasTieGame, setWasTieGame ] = useState(false);
