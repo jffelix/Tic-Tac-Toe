@@ -4,9 +4,29 @@
     justify-content: center;
 }
 
+.c1 {
+    border-left-style: none;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: none;
+}
+
+.c2 {
+    border-left-style: solid;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: none;
+}
+
+.c3 {
+    border-left-style: solid;
+    border-top-style: solid;
+    border-right-style: none;
+    border-bottom-style: none;   
+}
+
 .c1, .c2, .c3 {
     height: 100;
     width: 100;
     font-size: 80px;
-    border-style: solid;
 }

@@ -4,9 +4,29 @@
     justify-content: center;
 }
 
+.a1 {
+    border-left-style: none;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+}
+
+.a2 {
+    border-left-style: solid;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+}
+
+.a3 {
+    border-left-style: solid;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;   
+}
+
 .a1, .a2, .a3 {
     font-size: 80px;
     height: 100;
     width: 100;
-    border-style: solid;
 }
