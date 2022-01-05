@@ -11,9 +11,8 @@ const Board = (props) => {
     }, []);
 
     const [ currentTurn, setCurrentTurn ] = useState(null);
+    const [ previousTurn, setPreviousTurn ] = useState(null);
 
-    const [ wasWinnerDeclared, setWasWinnerDeclared] = useState(false);
-    // const [ wasTieGame, setWasTieGame ] = useState(false);
     const [ winner, setWinner ] = useState(null);
 
     const [ a1, setA1 ] = useState(null);
@@ -31,8 +30,10 @@ const Board = (props) => {
     const changeTurn = () => {
         if (currentTurn === "X") {
             setCurrentTurn("O");
+            setPreviousTurn("X");
         } else {
             setCurrentTurn("X");
+            setPreviousTurn("O");
         }
     }
 
@@ -108,7 +109,7 @@ const Board = (props) => {
                 a3 && a3 === b2 && a3 === c1
                 ?
                 <div>
-                    <h3>Player Wins!</h3>
+                    <h3>Player {previousTurn} Wins!</h3>
                     <h4>Try Again?</h4>
                     <button onClick={resetGame}>Reset</button>
                 </div> : null
@@ -191,3 +192,9 @@ export default Board;
     //     (a1 !== b2 || a1 !== c3) ||
     //     (a3 !== b2 || a3 !== c1)
     // )
+
+
+// BACKUP VARIABLES
+
+    // const [ wasWinnerDeclared, setWasWinnerDeclared] = useState(false);
+    // const [ wasTieGame, setWasTieGame ] = useState(false);
