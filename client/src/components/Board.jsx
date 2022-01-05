@@ -12,8 +12,8 @@ const Board = (props) => {
 
     const [ currentTurn, setCurrentTurn ] = useState(null);
 
-    const [ wasWinnerDeclared, setWasWinnerDeclared] = useState(false);
-    const [ wasTieGame, setWasTieGame ] = useState(false);
+    // const [ wasWinnerDeclared, setWasWinnerDeclared] = useState(false);
+    // const [ wasTieGame, setWasTieGame ] = useState(false);
     const [ winner, setWinner ] = useState(null);
 
     const [ a1, setA1 ] = useState(null);
@@ -36,6 +36,18 @@ const Board = (props) => {
         }
     }
 
+    const resetGame = () => {
+        setA1(null);
+        setA2(null);
+        setA3(null);
+        setB1(null);
+        setB2(null);
+        setB3(null);
+        setC1(null);
+        setC2(null);
+        setC3(null);
+    }
+
     const markBox = () => {
         if (currentTurn === "X") {
             changeTurn();
@@ -43,39 +55,6 @@ const Board = (props) => {
             changeTurn();
         }
     }
-   
-    // const checkForWinner = () => {
-
-    //     // for horizontal wins
-    //     if (a1 && a1 === a2 && a1 === a3) {
-    //         setWasWinnerDeclared(true);
-    //     }
-    //     if (b1 && b1 === b2 && b1 === b3) {
-    //         setWasWinnerDeclared(true);
-    //     }
-    //     if (c1 && c1 === c2 && c1 === c3) {
-    //         setWasWinnerDeclared(true);
-    //     }
-
-    //     // for vertical wins
-    //     if (a1 && a1 === b1 && a1 === c1) {
-    //         setWasWinnerDeclared(true);
-    //     }
-    //     if (a2 && a2 === b2 && a2 === c2) {
-    //         setWasWinnerDeclared(true);
-    //     }
-    //     if (a3 && a3 === b3 && a3 === c3) {
-    //         setWasWinnerDeclared(true);
-    //     }
-
-    //     // for diagonal wins
-    //     if (a1 && a1 === b2 && a1 === c3) {
-    //         setWasWinnerDeclared(true); 
-    //     }
-    //     if (a3 && a3 === b2 && a3 === c1) {
-    //         setWasWinnerDeclared(true);  
-    //     }
-    // }
 
     return (
         <div>
@@ -130,6 +109,8 @@ const Board = (props) => {
                 ?
                 <div>
                     <h3>Player Wins!</h3>
+                    <h4>Try Again?</h4>
+                    <button onClick={resetGame}>Reset</button>
                 </div> : null
             }
             {
@@ -139,6 +120,8 @@ const Board = (props) => {
                 ?
                 <div>
                     <h3>Tie!</h3>
+                    <h4>Try Again?</h4>
+                    <button onClick={resetGame}>Reset</button>
                 </div> : null
             }
         </div>
@@ -146,3 +129,40 @@ const Board = (props) => {
 }
 
 export default Board;
+
+
+
+// BACKUP CODE FOR SETSTATE
+
+    // const checkForWinner = () => {
+
+    //     // for horizontal wins
+    //     if (a1 && a1 === a2 && a1 === a3) {
+    //         setWasWinnerDeclared(true);
+    //     }
+    //     if (b1 && b1 === b2 && b1 === b3) {
+    //         setWasWinnerDeclared(true);
+    //     }
+    //     if (c1 && c1 === c2 && c1 === c3) {
+    //         setWasWinnerDeclared(true);
+    //     }
+
+    //     // for vertical wins
+    //     if (a1 && a1 === b1 && a1 === c1) {
+    //         setWasWinnerDeclared(true);
+    //     }
+    //     if (a2 && a2 === b2 && a2 === c2) {
+    //         setWasWinnerDeclared(true);
+    //     }
+    //     if (a3 && a3 === b3 && a3 === c3) {
+    //         setWasWinnerDeclared(true);
+    //     }
+
+    //     // for diagonal wins
+    //     if (a1 && a1 === b2 && a1 === c3) {
+    //         setWasWinnerDeclared(true); 
+    //     }
+    //     if (a3 && a3 === b2 && a3 === c1) {
+    //         setWasWinnerDeclared(true);  
+    //     }
+    // }
