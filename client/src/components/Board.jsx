@@ -60,7 +60,7 @@ const Board = (props) => {
             <div>
                 <h2>Current Turn: {currentTurn}</h2>
             </div>
-            <div className="firstRow">
+            <div>
                 <FirstRow 
                     a1={a1} 
                     setA1={setA1}
@@ -72,7 +72,7 @@ const Board = (props) => {
                     currentTurn={currentTurn}
                 />
             </div>
-            <div className="secondRow">
+            <div>
                 <SecondRow 
                     b1={b1} 
                     setB1={setB1}
@@ -84,7 +84,7 @@ const Board = (props) => {
                     currentTurn={currentTurn}
                 />
             </div>
-            <div className="thirdRow">
+            <div>
                 <ThirdRow 
                     c1={c1} 
                     setC1={setC1}

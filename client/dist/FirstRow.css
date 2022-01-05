@@ -5,9 +5,8 @@
 }
 
 .a1, .a2, .a3 {
-    font-size: 30px;
+    font-size: 80px;
     height: 100;
     width: 100;
-    position: relative;
-    overflow-y: scroll;
+    border-style: solid;
 }

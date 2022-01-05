@@ -5,8 +5,8 @@
 }
 
 .c1, .c2, .c3 {
-    font-size: 30px;
     height: 100;
     width: 100;
-    position: relative;
+    font-size: 80px;
+    border-style: solid;
 }
