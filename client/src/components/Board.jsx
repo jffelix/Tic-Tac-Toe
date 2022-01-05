@@ -12,7 +12,7 @@ const Board = (props) => {
 
     const [ currentTurn, setCurrentTurn ] = useState(null);
 
-    // const [ wasWinnerDeclared, setWasWinnerDeclared] = useState(false);
+    const [ wasWinnerDeclared, setWasWinnerDeclared] = useState(false);
     // const [ wasTieGame, setWasTieGame ] = useState(false);
     const [ winner, setWinner ] = useState(null);
 
@@ -36,6 +36,14 @@ const Board = (props) => {
         }
     }
 
+    const markBox = () => {
+        if (currentTurn === "X") {
+            changeTurn();
+        } else {
+            changeTurn();
+        }
+    }
+
     const resetGame = () => {
         setA1(null);
         setA2(null);
@@ -46,14 +54,6 @@ const Board = (props) => {
         setC1(null);
         setC2(null);
         setC3(null);
-    }
-
-    const markBox = () => {
-        if (currentTurn === "X") {
-            changeTurn();
-        } else {
-            changeTurn();
-        }
     }
 
     return (
@@ -116,7 +116,18 @@ const Board = (props) => {
             {
                 a1 && a2 && a3 &&
                 b1 && b2 && b3 &&
-                c1 && c2 && c3
+                c1 && c2 && c3 && 
+                (
+                    (a1 !== a2 || a1 !== a3) &&
+                    (b1 !== b2 || b1 !== b3) &&
+                    (c1 !== c2 || c1 !== c3) &&
+                    (a1 !== b1 || a1 !== c1) &&
+                    (a2 !== b2 || a2 !== c2) &&
+                    (a3 !== b3 || a3 !== c3) &&
+                    (a1 !== b2 || a1 !== c3) &&
+                    (a3 !== b2 || a3 !== c1)
+
+                )
                 ?
                 <div>
                     <h3>Tie!</h3>
@@ -166,3 +177,17 @@ export default Board;
     //         setWasWinnerDeclared(true);  
     //     }
     // }
+
+
+// NO MATCH CONDITIONAL
+
+    // (
+    //     (a1 !== a2 || a1 !== a3) ||
+    //     (b1 !== b2 || b1 !== b3) ||
+    //     (c1 !== c2 || c1 !== c3) ||
+    //     (a1 !== b1 || a1 !== c1) ||
+    //     (a2 !== b2 || a2 !== c2) ||
+    //     (a3 !== b3 || a3 !== c3) ||
+    //     (a1 !== b2 || a1 !== c3) ||
+    //     (a3 !== b2 || a3 !== c1)
+    // )
