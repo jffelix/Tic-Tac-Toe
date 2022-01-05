@@ -1,6 +1,7 @@
 import React from "react";
+import "../../../dist/FirstRow.css";
 
-const ThirdRow = (props) => {
+const FirstRow = (props) => {
 
     const markA1 = () => {
         if (props.a1 !== null) {
@@ -38,4 +39,4 @@ const ThirdRow = (props) => {
     )
 }
 
-export default ThirdRow;
+export default FirstRow;
