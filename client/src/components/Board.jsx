@@ -11,6 +11,7 @@ const Board = (props) => {
     }, []);
 
     const [ wasWinnerDeclared, setWasWinnerDeclared] = useState(false);
+    const [ wasTieGame, setWasTieGame ] = useState(false);
     const [ winner, setWinner ] = useState(null);
 
     const [ a1, setA1 ] = useState(null);
@@ -28,27 +29,44 @@ const Board = (props) => {
     const markBox = () => {
         if (props.currentTurn === "X") {
             props.changeTurn();
+            checkForWinner();
         } else {
             props.changeTurn();
+            checkForWinner();
         }
     }
-
-    // use ternary operators in conditional rendering
-      // only render if wasWinnerDeclared is true
-      // "{winner} Won!"
-    // every time you click a box
-      // invoke checkForWinner
-    
+   
     const checkForWinner = () => {
 
+        // for horizontal wins
         if (a1 && a1 === a2 && a1 === a3) {
             setWasWinnerDeclared(true);
         }
+        if (b1 && b1 === b2 && b1 === b3) {
+            setWasWinnerDeclared(true);
+        }
+        if (c1 && c1 === c2 && c1 === c3) {
+            setWasWinnerDeclared(true);
+        }
 
-        console.log('wasWinnerDeclared: ', wasWinnerDeclared);
-        console.log('a1: ', a1);
-        console.log('a2: ', a2);
-        console.log('a3: ', a3);
+        // for vertical wins
+        if (a1 && a1 === b1 && a1 === c1) {
+            setWasWinnerDeclared(true);
+        }
+        if (a2 && a2 === b2 && a2 === c2) {
+            setWasWinnerDeclared(true);
+        }
+        if (a3 && a3 === b3 && a3 === c3) {
+            setWasWinnerDeclared(true);
+        }
+
+        // for diagonal wins
+        if (a1 && a1 === b2 && a1 === c3) {
+            setWasWinnerDeclared(true); 
+        }
+        if (a3 && a3 === b2 && a3 === c1) {
+            setWasWinnerDeclared(true);  
+        }
     }
     
     return (
@@ -89,6 +107,7 @@ const Board = (props) => {
                     setC3={setC3}
                     markBox={markBox} 
                     currentTurn={props.currentTurn}
+                    checkForWinner={checkForWinner}
                 />
             </div>
             {!wasWinnerDeclared ? null: 
