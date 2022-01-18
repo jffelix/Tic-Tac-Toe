@@ -32,9 +32,6 @@ const ThirdRow = (props) => {
 
     return (
         <div className="thirdRow">
-            {/* <button className="c1" onClick={markC1}>{props.c1}</button>
-            <button className="c2" onClick={markC2}>{props.c2}</button>
-            <button className="c3" onClick={markC3}>{props.c3}</button> */}
             <div className="c1" onClick={markC1}>
                 <span>{props.c1}</span>
             </div>

@@ -32,9 +32,6 @@ const SecondRow = (props) => {
 
     return (
         <div className="secondRow">
-            {/* <button className="b1" onClick={markB1}>{props.b1}</button>
-            <button className="b2" onClick={markB2}>{props.b2}</button>
-            <button className="b3" onClick={markB3}>{props.b3}</button> */}
             <div className="b1" onClick={markB1}>
                 <span>{props.b1}</span>
             </div>
